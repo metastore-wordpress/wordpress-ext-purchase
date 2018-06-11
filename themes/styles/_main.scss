@@ -1,0 +1,108 @@
+.wp-ext-purchase {
+	table.purchases {
+		word-break: normal;
+		th,
+		td {
+			text-align: center;
+		}
+		th {
+			font-size: 1.2rem;
+			text-transform: uppercase;
+		}
+		td {
+			font-size: 1.4rem;
+		}
+	}
+	.purchase-content {
+		margin-bottom: 4rem;
+		section {
+			margin-top: 4rem;
+			h4 {
+				&:first-child {
+					margin-top: 0;
+				}
+			}
+			.field {
+				display: grid;
+				font-size: 1.4rem;
+				padding: .5rem 0;
+				grid-gap: 0 1rem;
+				grid-template-columns: 25rem 1fr;
+				&:first-child {
+					padding-top: 0;
+				}
+				&:last-child {
+					padding-bottom: 0;
+				}
+			}
+		}
+		.purchase-info,
+		.purchase-customer,
+		.purchase-contacts {
+			&-content {
+				background: hsl(0, 0%, 96%);
+				border-radius: .4rem;
+				padding: 2rem;
+			}
+			.field {
+				&-label {
+					text-transform: uppercase;
+				}
+			}
+		}
+		.purchase-storage {
+			&-content {
+				background: hsl(0, 0%, 96%);
+				border-radius: .4rem;
+				padding: 2rem;
+			}
+			.field {
+				display: block;
+				padding: 1rem 0;
+			}
+			.field-value {
+				margin: 1rem 0;
+				text-align: justify;
+				&:first-child {
+					margin-top: 0;
+				}
+				&:last-child {
+					margin-bottom: 0;
+				}
+			}
+			.file-title {
+				font-size: 1.6rem;
+				text-transform: uppercase;
+			}
+			.file-hash {
+				display: grid;
+				grid-template-columns: 1fr 4rem;
+				background: hsl(0, 0%, 100%);
+				border-radius: .4rem;
+				padding: .5rem;
+				div:first-child {
+					font-family: monospace;
+					overflow: hidden;
+				}
+				div:last-child {
+					color: hsl(0, 0%, 86%);
+					cursor: help;
+					text-align: right;
+				}
+			}
+		}
+	}
+}
+
+.widget.wp-ext-purchase {
+	ul {
+		li {
+			overflow: hidden;
+			a {
+				&:last-child {
+					float: right;
+				}
+			}
+		}
+	}
+}
