@@ -2,14 +2,12 @@
 
 /**
  * Class WP_EXT_Purchase_Theme
- * ------------------------------------------------------------------------------------------------------------------ */
-
+ */
 class WP_EXT_Purchase_Theme extends WP_EXT_Purchase {
 
 	/**
 	 * Constructor.
-	 * -------------------------------------------------------------------------------------------------------------- */
-
+	 */
 	public function __construct() {
 		parent::__construct();
 
@@ -18,8 +16,7 @@ class WP_EXT_Purchase_Theme extends WP_EXT_Purchase {
 
 	/**
 	 * Plugin: `initialize`.
-	 * -------------------------------------------------------------------------------------------------------------- */
-
+	 */
 	public function run() {
 		add_action( 'wp_enqueue_scripts', [ $this, 'enqueue_style' ], 92 );
 		add_filter( 'body_class', [ $this, 'body_class' ] );
@@ -27,8 +24,7 @@ class WP_EXT_Purchase_Theme extends WP_EXT_Purchase {
 
 	/**
 	 * Enqueue style.
-	 * -------------------------------------------------------------------------------------------------------------- */
-
+	 */
 	public function enqueue_style() {
 		if ( ! is_admin() && ( is_singular( $this->pt_ID )
 		                       || is_post_type_archive( $this->pt_ID )
@@ -43,8 +39,7 @@ class WP_EXT_Purchase_Theme extends WP_EXT_Purchase {
 	 * @param $classes
 	 *
 	 * @return array
-	 * -------------------------------------------------------------------------------------------------------------- */
-
+	 */
 	public function body_class( $classes ) {
 		if ( ! is_admin() && ( is_singular( $this->pt_ID ) || is_post_type_archive( $this->pt_ID ) ) ) {
 			$classes[] = 'wp-ext-' . $this->pt_ID;
@@ -58,8 +53,7 @@ class WP_EXT_Purchase_Theme extends WP_EXT_Purchase {
  * Helper function to retrieve the static object without using globals.
  *
  * @return WP_EXT_Purchase_Theme
- * ------------------------------------------------------------------------------------------------------------------ */
-
+ */
 function WP_EXT_Purchase_Theme() {
 	static $object;
 
@@ -72,6 +66,5 @@ function WP_EXT_Purchase_Theme() {
 
 /**
  * Initialize the object on `plugins_loaded`.
- * ------------------------------------------------------------------------------------------------------------------ */
-
+ */
 add_action( 'plugins_loaded', [ WP_EXT_Purchase_Theme(), 'run' ] );

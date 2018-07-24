@@ -19,7 +19,7 @@
 
 /**
  * Loading `WP_EXT_Purchase`.
- * ------------------------------------------------------------------------------------------------------------------ */
+ */
 
 function run_wp_ext_purchase() {
 	require_once( plugin_dir_path( __FILE__ ) . 'includes/WP_EXT_Purchase.class.php' );

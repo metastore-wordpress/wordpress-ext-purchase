@@ -2,14 +2,12 @@
 
 /**
  * Class WP_EXT_Purchase_Taxonomy
- * ------------------------------------------------------------------------------------------------------------------ */
-
+ */
 class WP_EXT_Purchase_Taxonomy extends WP_EXT_Purchase {
 
 	/**
 	 * Constructor.
-	 * -------------------------------------------------------------------------------------------------------------- */
-
+	 */
 	public function __construct() {
 		parent::__construct();
 
@@ -18,8 +16,7 @@ class WP_EXT_Purchase_Taxonomy extends WP_EXT_Purchase {
 
 	/**
 	 * Plugin: `initialize`.
-	 * -------------------------------------------------------------------------------------------------------------- */
-
+	 */
 	public function run() {
 		add_action( 'init', [ $this, 'taxonomy_meta' ], 0 );
 		add_action( 'init', [ $this, 'taxonomy_method' ], 0 );
@@ -28,8 +25,7 @@ class WP_EXT_Purchase_Taxonomy extends WP_EXT_Purchase {
 
 	/**
 	 * Taxonomy: `purchase_meta`.
-	 * -------------------------------------------------------------------------------------------------------------- */
-
+	 */
 	public function taxonomy_meta() {
 		$labels  = [
 			'name'                       => _x( 'Purchase Meta', 'Meta General Name', 'wp-ext-' . $this->domain_ID ),
@@ -75,8 +71,7 @@ class WP_EXT_Purchase_Taxonomy extends WP_EXT_Purchase {
 
 	/**
 	 * Taxonomy: `purchase_method`.
-	 * -------------------------------------------------------------------------------------------------------------- */
-
+	 */
 	public function taxonomy_method() {
 		$labels  = [
 			'name'                       => _x( 'Purchase Method', 'Method General Name', 'wp-ext-' . $this->domain_ID ),
@@ -122,8 +117,7 @@ class WP_EXT_Purchase_Taxonomy extends WP_EXT_Purchase {
 
 	/**
 	 * Taxonomy: `purchase_status`.
-	 * -------------------------------------------------------------------------------------------------------------- */
-
+	 */
 	public function taxonomy_status() {
 		$labels  = [
 			'name'                       => _x( 'Purchase Status', 'Status General Name', 'wp-ext-' . $this->domain_ID ),
@@ -172,8 +166,7 @@ class WP_EXT_Purchase_Taxonomy extends WP_EXT_Purchase {
  * Helper function to retrieve the static object without using globals.
  *
  * @return WP_EXT_Purchase_Taxonomy
- * ------------------------------------------------------------------------------------------------------------------ */
-
+ */
 function WP_EXT_Purchase_Taxonomy() {
 	static $object;
 
@@ -186,6 +179,5 @@ function WP_EXT_Purchase_Taxonomy() {
 
 /**
  * Initialize the object on `plugins_loaded`.
- * ------------------------------------------------------------------------------------------------------------------ */
-
+ */
 add_action( 'plugins_loaded', [ WP_EXT_Purchase_Taxonomy(), 'run' ] );
